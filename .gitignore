@@ -1,0 +1,9 @@
+*.iml
+.idea
+
+**/.terraform
+**/.terraform.lock.hcl
+**/tfplan
+
+lambda/node_modules
+dist/
