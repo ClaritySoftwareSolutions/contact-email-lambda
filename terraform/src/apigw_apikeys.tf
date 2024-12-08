@@ -1,6 +1,9 @@
 resource "aws_api_gateway_api_key" "clarity_software_solutions" {
-  name = "enquiries@claritysoftware.co.uk"
+  name = "Clarity Software Solutions"
   description = "Clarity Software Solutions"
+  tags = {
+    "contact_email_to" = "${var.contact_email_to.clarity_software_solutions}"
+  }
   enabled = true
 }
 
@@ -11,8 +14,11 @@ resource "aws_api_gateway_usage_plan_key" "associate_clarity_software_solutions"
 }
 
 resource "aws_api_gateway_api_key" "jake_russell_photography" {
-  name = "jake@jakerussell.photography"
+  name = "Jake Russell Photography"
   description = "Jake Russell Photography"
+  tags = {
+    "contact_email_to" = "${var.contact_email_to.jake_russell_photography}"
+  }
   enabled = true
 }
 

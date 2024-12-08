@@ -37,7 +37,7 @@ resource "aws_api_gateway_integration" "post_integration" {
   resource_id = aws_api_gateway_resource.contact.id
   http_method = aws_api_gateway_method.post.http_method
   integration_http_method = "POST"
-  type = "AWS"
+  type = "AWS_PROXY"
   uri = aws_lambda_function.contact_email_lambda.invoke_arn
 }
 

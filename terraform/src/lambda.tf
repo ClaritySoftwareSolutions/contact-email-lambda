@@ -33,11 +33,15 @@ data "aws_iam_policy_document" "contact_email_lambda_policy" {
   statement {
     actions = [
       "logs:CreateLogStream",
-      "logs:PutLogEvents"
+      "logs:PutLogEvents",
+      "apigateway:GET",
+      "ses:SendEmail"
     ]
     resources = [
       aws_cloudwatch_log_group.contact_email_lambda_loggroup.arn,
-      "${aws_cloudwatch_log_group.contact_email_lambda_loggroup.arn}:*"
+      "${aws_cloudwatch_log_group.contact_email_lambda_loggroup.arn}:*",
+      "arn:aws:apigateway:eu-west-2::/apikeys/*",
+      "arn:aws:ses:eu-west-2:${data.aws_caller_identity.current_account.account_id}:identity/*"
     ]
   }
 }
