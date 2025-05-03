@@ -19,7 +19,7 @@ resource "aws_lambda_function" "contact_email_lambda" {
   function_name = "contact_email_lambda"
   role          = aws_iam_role.contact_email_lambda_role.arn
   handler       = "index.handler"
-  runtime       = "nodejs18.x"
+  runtime       = "nodejs22.x"
   memory_size   = 1024
   timeout       = 300
 }
